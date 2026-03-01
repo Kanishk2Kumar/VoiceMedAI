@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
+import { logOut } from "@/app/actions/auth"; // Adjust this import path if needed
 
 export function Sidebar() {
   return (
-    <aside className="hidden md:flex flex-col w-64 h-full bg-[#111813] border-r border-border-dark flex-shrink-0">
+    <aside className="hidden md:flex flex-col w-64 h-full bg-[#111813] border-r border-border-dark shrink-0">
       <div className="p-6 flex items-center gap-3">
         <div className="size-8 text-primary">
               <svg
@@ -121,9 +124,20 @@ export function Sidebar() {
               Chief Admin
             </p>
           </div>
-          <span className="material-symbols-outlined text-slate-400 text-lg cursor-pointer hover:text-primary">
-            logout
-          </span>
+          
+          {/* Logout functionality injected here */}
+          <form action={async () => { await logOut(); }}>
+            <button 
+              type="submit" 
+              className="flex items-center justify-center p-1 rounded-md hover:bg-[#28392e] transition-colors focus:outline-none"
+              title="Logout"
+            >
+              <span className="material-symbols-outlined text-slate-400 text-lg cursor-pointer hover:text-red-400 transition-colors">
+                logout
+              </span>
+            </button>
+          </form>
+
         </div>
       </div>
     </aside>
