@@ -1,4 +1,5 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Building } from "lucide-react";
@@ -7,19 +8,35 @@ import {
   FieldDescription,
   FieldGroup,
   FieldLabel,
-  FieldSeparator,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { signUp } from "@/app/actions/auth";
 
 export function SignupForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
   const [role, setRole] = useState<string>("");
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  // Client-side wrapper to handle loading states and display errors
+  async function clientAction(formData: FormData) {
+    setIsLoading(true);
+    setError(null);
+    
+    const result = await signUp(formData);
+    
+    if (result?.error) {
+      setError(result.error);
+      setIsLoading(false);
+    }
+  }
 
   return (
     <form
+      action={clientAction}
       className={cn("flex flex-col gap-5 font-display", className)}
       {...props}
     >
@@ -30,29 +47,41 @@ export function SignupForm({
             Join the leading voice AI platform for healthcare automation.
           </p>
         </div>
+
+        {/* Display error if one occurs */}
+        {error && (
+          <div className="p-3 text-sm text-red-500 bg-red-500/10 rounded-md border border-red-500/20">
+            {error}
+          </div>
+        )}
+
         <div className="flex flex-row gap-4">
           <Field>
-            <FieldLabel htmlFor="email">First Name</FieldLabel>
-            <Input id="text" type="text" placeholder="Kanishk" required />
+            <FieldLabel htmlFor="first_name">First Name</FieldLabel>
+            <Input id="first_name" name="first_name" type="text" placeholder="Kanishk" required />
           </Field>
           <Field>
-            <FieldLabel htmlFor="email">Last Name</FieldLabel>
-            <Input id="text" type="text" placeholder="Kumar" required />
+            <FieldLabel htmlFor="last_name">Last Name</FieldLabel>
+            <Input id="last_name" name="last_name" type="text" placeholder="Kumar" required />
           </Field>
         </div>
+
         <Field>
           <FieldLabel htmlFor="email">Email</FieldLabel>
-          <Input id="email" type="email" placeholder="m@example.com" required />
+          <Input id="email" name="email" type="email" placeholder="m@example.com" required />
         </Field>
+
         <Field>
-          <FieldLabel htmlFor="email">Organization Name</FieldLabel>
+          <FieldLabel htmlFor="organization_name">Organization Name</FieldLabel>
           <Input
-            id="text"
+            id="organization_name"
+            name="organization_name"
             type="text"
             placeholder="eg. City Hospital"
             required
           />
         </Field>
+
         <div className="relative w-full">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <Building className="h-5 w-5 text-slate-400" />
@@ -62,9 +91,8 @@ export function SignupForm({
             name="role"
             value={role}
             onChange={(e) => setRole(e.target.value)}
-            className="block w-full rounded-lg border border-border-light dark:border-border-dark 
-                   bg-white text-slate-900 focus:border-primary focus:ring-primary 
-                   pl-10 pr-8 py-2.5 sm:text-sm shadow-sm appearance-none"
+            required
+            className="block w-full rounded-lg border border-border-light dark:border-border-dark bg-white text-slate-900 focus:border-primary focus:ring-primary pl-10 pr-8 py-2.5 sm:text-sm shadow-sm appearance-none"
           >
             <option disabled value="">
               Select your role
@@ -97,20 +125,20 @@ export function SignupForm({
         <Field>
           <div className="flex items-center">
             <FieldLabel htmlFor="password">Password</FieldLabel>
-            <a
-              href="#"
-              className="ml-auto text-sm underline-offset-4 hover:underline"
-            >
-              Forgot your password?
-            </a>
           </div>
-          <Input id="password" type="password" required />
+          <Input id="password" name="password" type="password" required />
         </Field>
+
         <Field>
-          <Button type="submit" className="bg-green-500 text-black font-black">
-            Sign Up
+          <Button 
+            type="submit" 
+            disabled={isLoading}
+            className="bg-green-500 text-black font-black disabled:opacity-50"
+          >
+            {isLoading ? "Signing up..." : "Sign Up"}
           </Button>
         </Field>
+
         <FieldDescription className="text-center">
           Already have an account?{" "}
           <a href="/sign-in" className="underline underline-offset-4">
