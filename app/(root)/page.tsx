@@ -1,151 +1,10 @@
+import Header from "@/components/header"
 export default function Home() {
   return (
     <>
-      <div>
-        <meta charSet="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <title>VoiceMed AI - Healthcare Automation</title>
-
-        {/* Tailwind CSS */}
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-        {/* Theme Configuration */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              tailwind.config = {
-                  darkMode: "className",
-                  theme: {
-                      extend: {
-                          colors: {
-                              "primary": "#13ec5b",
-                              "primary-hover": "#0fb845",
-                              "background-light": "#f6f8f6",
-                              "background-dark": "#111813",
-                              "card-dark": "#1c271f",
-                              "border-dark": "#28392e",
-                              "text-muted": "#9db9a6",
-                          },
-                          fontFamily: {
-                              "display": ["Manrope", "sans-serif"],
-                              "body": ["Noto Sans", "sans-serif"]
-                          },
-                          borderRadius: {
-                              "DEFAULT": "0.25rem",
-                              "lg": "0.5rem",
-                              "xl": "0.75rem",
-                              "full": "9999px"
-                          },
-                      },
-                  },
-              }
-            `,
-          }}
-        />
-
-        {/* Fonts */}
-        <link href="https://fonts.googleapis.com" rel="preconnect" />
-        <link
-          crossOrigin="anonymous"
-          href="https://fonts.gstatic.com"
-          rel="preconnect"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
-
-        {/* Material Icons */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-          rel="stylesheet"
-        />
-
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-              .glass-panel {
-                  background: rgba(28, 39, 31, 0.7);
-                  backdrop-filter: blur(12px);
-                  -webkit-backdrop-filter: blur(12px);
-                  border: 1px solid rgba(19, 236, 91, 0.1);
-              }
-              
-              /* Smooth scrolling */
-              html {
-                  scroll-behavior: smooth;
-              }
-            `,
-          }}
-        />
-      </div>
       <div className="bg-background-dark text-slate-100 font-display antialiased overflow-x-hidden selection:bg-primary selection:text-background-dark">
         <div className="relative flex min-h-screen w-full flex-col">
-          {/* Header */}
-          <header className="sticky top-0 z-50 w-full border-b border-border-dark bg-background-dark/95 backdrop-blur supports-[backdrop-filter]:bg-background-dark/80">
-            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-              <div className="flex items-center gap-2">
-                <div className="flex size-8 items-center justify-center rounded text-primary">
-                  <div className="size-8 text-primary">
-                    <svg
-                      className="w-full h-full"
-                      fill="none"
-                      viewBox="0 0 48 48"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-                <span className="text-lg font-bold tracking-tight text-white">
-                  VoiceMed AI
-                </span>
-              </div>
-              <nav className="hidden md:flex items-center gap-8">
-                <a
-                  className="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
-                  href="#"
-                >
-                  Solutions
-                </a>
-                <a
-                  className="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
-                  href="#"
-                >
-                  Platform
-                </a>
-                <a
-                  className="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
-                  href="#"
-                >
-                  Security
-                </a>
-                <a
-                  className="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
-                  href="#"
-                >
-                  Pricing
-                </a>
-              </nav>
-              <div className="flex items-center gap-4">
-                <a
-                  className="hidden text-sm font-medium text-slate-300 hover:text-white sm:block"
-                  href="/sign-in"
-                >
-                  Log in
-                </a>
-                <a
-                  className="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-background-dark hover:bg-primary-hover transition-colors shadow-[0_0_15px_rgba(19,236,91,0.3)]"
-                  href="/sign-up"
-                >
-                  Get Started
-                </a>
-              </div>
-            </div>
-          </header>
+          <Header />
 
           <main className="flex-1">
             {/* Hero Section */}
@@ -155,7 +14,7 @@ export default function Home() {
                 aria-hidden="true"
                 className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
               >
-                <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#13ec5b] to-[#1c271f] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"></div>
+                <div className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#13ec5b] to-[#1c271f] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"></div>
               </div>
               <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl py-12 sm:py-16 lg:py-20 text-center">
@@ -462,14 +321,14 @@ export default function Home() {
 
                   {/* Workflow Card 3 */}
                   <div className="group relative flex flex-col overflow-hidden rounded-xl bg-card-dark border border-border-dark hover:border-primary/40 transition-all shadow-lg">
-                    <div className="aspect-[16/9] bg-gray-800 sm:aspect-[2/1] lg:aspect-auto lg:h-64 relative overflow-hidden">
+                    <div className="aspect-video bg-gray-800 sm:aspect-2/1 lg:aspect-auto lg:h-64 relative overflow-hidden">
                       <img
                         alt="Medical team meeting discussing triage procedures"
                         className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80"
                         data-alt="Abstract medical triage concept with team"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsA6mdY0lfs0jiIlNNUt2_C7PIRvaYotfDrLKeFYiFwbgNWlzKlFeKaswTgZhC-NSNWBI-7NqMWTlQTguPvMIXShMl9PYkuK6W6YLrGE9QymxpAARyQ3FjZ1A5N395jFVEWdeT4eYe47AtAqm_HJh3cmOxZb4BsqOoBb1g63zdm3Hs3c5zf8XqkL_wMhIMUMu11TOhe8TlaLVaz8Ak1nO9qDTgmQKMtQ6tmlMCoqdx8-w9TCB-i9kB0nGXe28k1MSr-GdPBGjPhco"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-card-dark via-card-dark/40 to-transparent"></div>
+                      <div className="absolute inset-0 bg-linear-to-t from-card-dark via-card-dark/40 to-transparent"></div>
                       <div className="absolute bottom-4 left-4">
                         <span className="inline-flex items-center rounded-md bg-purple-400/20 px-2 py-1 text-xs font-medium text-purple-400 ring-1 ring-inset ring-purple-400/30">
                           Triage
