@@ -13,9 +13,9 @@ const Solutions = () => {
             aria-hidden="true"
             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           >
-            <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#10B981] to-[#064e3b] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"></div>
+            <div className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#10B981] to-[#064e3b] opacity-20 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>
           </div>
-          <div className="mx-auto max-w-[1200px] px-6 lg:px-8 text-center">
+          <div className="mx-auto max-w-300 px-6 lg:px-8 text-center">
             <div className="mx-auto max-w-3xl py-12 sm:py-16">
               <div className="mb-8 inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary shadow-[0_0_10px_rgba(16,185,129,0.1)]">
                 <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
@@ -34,7 +34,7 @@ const Solutions = () => {
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
-                  className="rounded-lg bg-primary px-6 py-3 text-base font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all"
+                  className="rounded-lg bg-primary px-6 py-3 text-base font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all"
                   href="#"
                 >
                   Explore Solutions
@@ -62,7 +62,7 @@ const Solutions = () => {
               backgroundSize: "32px 32px",
             }}
           ></div>
-          <div className="mx-auto max-w-[1200px] px-6 lg:px-8 relative z-10">
+          <div className="mx-auto max-w-300 px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Feature 1 */}
               <div className="group relative bg-background-dark p-6 rounded-2xl border border-border-dark hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1">
@@ -161,7 +161,7 @@ const Solutions = () => {
 
         {/* Visual Workflow Builder */}
         <section className="py-24 bg-background-dark overflow-hidden">
-          <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
+          <div className="mx-auto max-w-300 px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Visual Workflow Builder
@@ -170,7 +170,7 @@ const Solutions = () => {
                 Design complex patient interactions with our drag-and-drop editor.
               </p>
             </div>
-            <div className="relative w-full max-w-5xl mx-auto h-[600px] rounded-xl border border-border-dark bg-[#111813] shadow-2xl overflow-hidden">
+            <div className="relative w-full max-w-5xl mx-auto h-150 rounded-xl border border-border-dark bg-[#111813] shadow-2xl overflow-hidden">
               <div
                 className="absolute inset-0 opacity-20"
                 style={{
@@ -228,7 +228,7 @@ const Solutions = () => {
                     ></path>
                   </svg>
                   {/* Node 1 */}
-                  <div className="absolute top-[20px] left-1/2 -translate-x-1/2 w-48 bg-[#111813] border-2 border-primary rounded-lg shadow-lg z-10 p-3">
+                  <div className="absolute top-5 left-1/2 -translate-x-1/2 w-48 bg-[#111813] border-2 border-primary rounded-lg shadow-lg z-10 p-3">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="material-symbols-outlined text-primary text-sm">
                         call
@@ -240,11 +240,11 @@ const Solutions = () => {
                     <div className="text-xs text-slate-300">
                       Trigger: Patient calls main line
                     </div>
-                    <div className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full border-2 border-[#111813]"></div>
+                    <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full border-2 border-[#111813]"></div>
                   </div>
                   {/* Node 2 */}
-                  <div className="absolute top-[150px] left-1/2 -translate-x-1/2 w-64 bg-[#111813] border border-border-dark rounded-lg shadow-lg z-10 p-4">
-                    <div className="absolute top-[-6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-500 rounded-full border-2 border-[#111813]"></div>
+                  <div className="absolute top-37.5 left-1/2 -translate-x-1/2 w-64 bg-[#111813] border border-border-dark rounded-lg shadow-lg z-10 p-4">
+                    <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-500 rounded-full border-2 border-[#111813]"></div>
                     <div className="flex justify-between items-start mb-2">
                       <span className="text-sm font-bold text-white">
                         Symptom Analysis
@@ -259,11 +259,11 @@ const Solutions = () => {
                     <div className="text-[10px] text-gray-500 uppercase font-bold">
                       Waiting for intent...
                     </div>
-                    <div className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full border-2 border-[#111813]"></div>
+                    <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full border-2 border-[#111813]"></div>
                   </div>
                   {/* Node 3 (Emergency) */}
-                  <div className="absolute top-[320px] left-[calc(50%-200px)] -translate-x-1/2 w-56 bg-[#111813] border border-border-dark rounded-lg shadow-lg z-10 p-4">
-                    <div className="absolute top-[-6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-500 rounded-full border-2 border-[#111813]"></div>
+                  <div className="absolute top-80 left-[calc(50%-200px)] -translate-x-1/2 w-56 bg-[#111813] border border-border-dark rounded-lg shadow-lg z-10 p-4">
+                    <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-500 rounded-full border-2 border-[#111813]"></div>
                     <div className="flex items-center gap-2 mb-2 border-b border-gray-700 pb-2">
                       <span className="w-2 h-2 rounded-full bg-red-500"></span>
                       <span className="text-sm font-bold text-white">Emergency Route</span>
@@ -279,8 +279,8 @@ const Solutions = () => {
                     </div>
                   </div>
                   {/* Node 4 (Routine) */}
-                  <div className="absolute top-[320px] left-[calc(50%+200px)] -translate-x-1/2 w-56 bg-[#111813] border border-border-dark rounded-lg shadow-lg z-10 p-4">
-                    <div className="absolute top-[-6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-500 rounded-full border-2 border-[#111813]"></div>
+                  <div className="absolute top-80 left-[calc(50%+200px)] -translate-x-1/2 w-56 bg-[#111813] border border-border-dark rounded-lg shadow-lg z-10 p-4">
+                    <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-500 rounded-full border-2 border-[#111813]"></div>
                     <div className="flex items-center gap-2 mb-2 border-b border-gray-700 pb-2">
                       <span className="w-2 h-2 rounded-full bg-primary"></span>
                       <span className="text-sm font-bold text-white">Routine Route</span>
@@ -305,7 +305,7 @@ const Solutions = () => {
 
         {/* Success Stories */}
         <section className="py-20 bg-card-dark/30 border-t border-border-dark">
-          <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
+          <div className="mx-auto max-w-300 px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-8">
@@ -313,7 +313,7 @@ const Solutions = () => {
                 </h3>
                 <div className="space-y-6">
                   <div className="flex gap-4 p-4 rounded-xl bg-background-dark border border-border-dark hover:border-primary/30 transition-colors">
-                    <div className="mt-1 flex-shrink-0 h-10 w-10 rounded-full bg-blue-500/10 flex items-center justify-center">
+                    <div className="mt-1 shrink-0 h-10 w-10 rounded-full bg-blue-500/10 flex items-center justify-center">
                       <span className="material-symbols-outlined text-blue-400">
                         cardiology
                       </span>
@@ -329,7 +329,7 @@ const Solutions = () => {
                     </div>
                   </div>
                   <div className="flex gap-4 p-4 rounded-xl bg-background-dark border border-border-dark hover:border-primary/30 transition-colors">
-                    <div className="mt-1 flex-shrink-0 h-10 w-10 rounded-full bg-green-500/10 flex items-center justify-center">
+                    <div className="mt-1 shrink-0 h-10 w-10 rounded-full bg-green-500/10 flex items-center justify-center">
                       <span className="material-symbols-outlined text-green-400">
                         pediatrics
                       </span>
@@ -343,7 +343,7 @@ const Solutions = () => {
                     </div>
                   </div>
                   <div className="flex gap-4 p-4 rounded-xl bg-background-dark border border-border-dark hover:border-primary/30 transition-colors">
-                    <div className="mt-1 flex-shrink-0 h-10 w-10 rounded-full bg-orange-500/10 flex items-center justify-center">
+                    <div className="mt-1 shrink-0 h-10 w-10 rounded-full bg-orange-500/10 flex items-center justify-center">
                       <span className="material-symbols-outlined text-orange-400">
                         accessible
                       </span>
@@ -363,7 +363,7 @@ const Solutions = () => {
                   Provider Success Stories
                 </h3>
                 <div className="relative">
-                  <div className="bg-gradient-to-br from-[#1c271f] to-background-dark p-8 rounded-2xl border border-border-dark relative">
+                  <div className="bg-linear-to-br from-[#1c271f] to-background-dark p-8 rounded-2xl border border-border-dark relative">
                     <span className="material-symbols-outlined absolute top-6 right-6 text-6xl text-white/5">
                       format_quote
                     </span>
@@ -405,7 +405,7 @@ const Solutions = () => {
 
         {/* CTA Section */}
         <section className="relative isolate overflow-hidden py-16 sm:py-24">
-          <div className="mx-auto max-w-[1200px] px-6 lg:px-8 text-center">
+          <div className="mx-auto max-w-300 px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
               Start Building Better Patient Experiences
             </h2>
