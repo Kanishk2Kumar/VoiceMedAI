@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 // Mock data for existing workflows
@@ -94,12 +95,12 @@ const Workflows = () => {
         </div>
 
         {/* Right: Create Button */}
-        <div className="flex items-center justify-end gap-4 w-1/4">
+        <Link className="flex items-center justify-end gap-4 w-1/4" href="/create">
           <button className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-white bg-primary rounded-lg hover:bg-[#0e9f6e] transition-colors shadow-lg shadow-primary/20">
             <span className="material-symbols-outlined text-[20px]">add</span>
             Create Workflow
           </button>
-        </div>
+        </Link>
       </header>
 
       {/* Scrollable Content */}
